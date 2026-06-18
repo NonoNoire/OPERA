@@ -31,6 +31,14 @@ OPERA is currently in its earliest phase of development. The present repository 
 
 The repository is private at this stage because the method is still experimental, incomplete, and connected to an ongoing doctoral project. A future open-source or open-research release may be considered once the system reaches a stable form and the boundaries between personal research material and shareable methodology are clearly defined.
 
+### Checkpoint — 18 giugno 2026
+
+The first operational checkpoint records the completion and official submission of the doctoral semester review, confirmed by prof.ssa Buffardi and prof. Cassani; the creation of the OPERA GitHub repository; and the reorganisation of the Obsidian vault.
+
+This marks the transition from administrative consolidation to active dissertation work, with three immediate priorities: GRADED, interview traces, and the transformation of an existing 30–40 page document into the seed of the dissertation.
+
+See: `docs/2026-06-18-genesis-checkpoint.md` and `docs/next-actions-graded-interviews-dissertation.md`.
+
 ## Synthetic Roadmap
 
 - **v0.1 Genesis**: initial repository, conceptual scaffold, and documentation structure.
