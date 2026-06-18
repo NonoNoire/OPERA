@@ -1,0 +1,32 @@
+# Obsidian temporary files and caches
+.obsidian/cache/
+.obsidian/workspace
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/app.json
+
+# Obsidian plugin caches and local state
+.obsidian/plugins/*/data.json
+.obsidian/plugins/*/.cache/
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor and IDE state
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary and backup files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Logs
+*.log
+
