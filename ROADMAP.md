@@ -26,7 +26,20 @@ Potential scope:
 - distinction between observation, question, hypothesis, experiment, and reflection;
 - weekly review routine.
 
-## v0.3 Knowledge Graph
+## v0.3 Conversational Capture
+
+Development of the conversational capture workflow.
+
+Potential scope:
+
+- check-in and check-out templates;
+- OPERA export block;
+- Codex extraction procedure;
+- Markdown capture notes;
+- GitHub-to-Obsidian synchronisation pattern;
+- stable checkpoint identifiers.
+
+## v0.4 Knowledge Graph
 
 Development of the conceptual and ontological structure.
 
@@ -39,7 +52,7 @@ Potential scope:
 - graph navigation strategy;
 - criteria for linking notes across disciplines.
 
-## v0.4 Automation
+## v0.5 Automation
 
 Integration of lightweight automation.
 
@@ -52,7 +65,7 @@ Potential scope:
 - calendar integration;
 - optional motivational research notes.
 
-## v0.5 Stable Beta
+## v0.6 Stable Beta
 
 Sustained testing across real research activity.
 
@@ -87,4 +100,3 @@ Future versions may include:
 - digital twin and material-process tracking;
 - export procedures for thesis writing;
 - structured bibliographic integration.
-
