@@ -8,29 +8,49 @@ To define how OPERA separates, connects, and preserves the different layers of a
 
 ## Core Layers
 
-<!-- Describe the main architectural layers of the system. -->
-
 ### 1. Capture Layer
 
-<!-- Daily notes, quick observations, fragments, and raw documentation. -->
+Daily notes, check-ins, check-outs, quick observations, fragments, and raw documentation enter OPERA through the Capture Layer.
+
+In v0.3, the Capture Layer also includes conversational capture: a natural exchange with ChatGPT can be converted into a structured `OPERA_EXPORT` block and then written by Codex as a Markdown note.
 
 ### 2. Processing Layer
 
-<!-- Review routines, classification, refinement, and transformation of raw material. -->
+Review routines, classification, refinement, and transformation of raw material. The Processing Layer decides what remains a daily operational trace, what becomes a research object, and what needs further development.
 
 ### 3. Conceptual Layer
 
-<!-- Research questions, hypotheses, concepts, theoretical references, and interdisciplinary links. -->
+Research questions, hypotheses, concepts, theoretical references, and interdisciplinary links. This layer is where captured material becomes part of the knowledge graph.
 
 ### 4. Output Layer
 
-<!-- Thesis writing, exhibitions, papers, presentations, and public documentation. -->
+Thesis writing, exhibitions, papers, presentations, and public documentation.
+
+## Conversational Workflow
+
+```text
+ChatGPT
+  -> conversational prompt
+  -> OPERA_EXPORT block
+  -> Codex extraction
+  -> Markdown capture note
+  -> GitHub versioning
+  -> Obsidian vault
+```
+
+This workflow is documented in `docs/Conversational-Capture.md`.
 
 ## Design Requirements
 
-<!-- Define requirements such as traceability, modularity, privacy, portability, and future publication. -->
+- **Traceability**: each relevant checkpoint should have a stable identifier.
+- **Modularity**: templates, scripts, examples, and private vault material must remain distinguishable.
+- **Privacy**: not every personal Obsidian note belongs in the shareable repository.
+- **Portability**: notes should remain readable Markdown files.
+- **Versioning**: meaningful changes should be preserved through Git.
+- **Calendar boundary**: Calendar stores dates and reminders, not research knowledge.
 
 ## Open Questions
 
-<!-- Record unresolved architectural questions. -->
-
+- Which OPERA materials should remain private and which can become part of a future public method?
+- Should the capture identifier be purely chronological (`R-000001`) or date-based (`OPERA-2026-06-19`)?
+- How much automation is desirable before the method becomes too opaque?
