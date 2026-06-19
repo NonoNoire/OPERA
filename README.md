@@ -39,13 +39,20 @@ This marks the transition from administrative consolidation to active dissertati
 
 See: `docs/2026-06-18-genesis-checkpoint.md` and `docs/next-actions-graded-interviews-dissertation.md`.
 
+### Checkpoint — 19 giugno 2026
+
+OPERA v0.3 introduces Conversational Capture: a workflow where a natural ChatGPT exchange can be converted into a structured `OPERA_EXPORT` block, processed by Codex, versioned on GitHub, and synchronised with Obsidian.
+
+The first daily check-out capture is stored as `vault/OPERA-Capture/2026/06/2026-06-19-r-000001.md`.
+
 ## Synthetic Roadmap
 
 - **v0.1 Genesis**: initial repository, conceptual scaffold, and documentation structure.
 - **v0.2 Daily Workflow**: definition of daily note routines, recurring prompts, and review procedures.
-- **v0.3 Knowledge Graph**: development of ontological relations and graph-based research navigation.
-- **v0.4 Automation**: integration of selected automations for reminders, reviews, and archival routines.
-- **v0.5 Stable Beta**: testing of the system across sustained research activity.
+- **v0.3 Conversational Capture**: conversion of check-ins/check-outs from natural conversation into structured Markdown records.
+- **v0.4 Knowledge Graph**: development of ontological relations and graph-based research navigation.
+- **v0.5 Automation**: integration of selected automations for reminders, reviews, and archival routines.
+- **v0.6 Stable Beta**: testing of the system across sustained research activity.
 - **v1.0 Public Release**: possible release of a stable, documented, shareable version.
 
 ## Repository Structure
@@ -54,7 +61,8 @@ See: `docs/2026-06-18-genesis-checkpoint.md` and `docs/next-actions-graded-inter
 - `templates/`: future OPERA templates, separated from any personal vault.
 - `examples/`: future anonymised examples of use.
 - `assets/`: shareable diagrams, images, and visual documentation.
-- `vault/`: notes about the relationship between the public method and the private Obsidian vault.
+- `scripts/`: lightweight utilities for capture, export, and maintenance.
+- `vault/`: notes about the relationship between the public method and the private Obsidian vault, plus selected OPERA capture notes when deliberately versioned.
 - `.github/`: future repository governance and workflow files.
 
 ## Licensing Note
@@ -68,4 +76,3 @@ Possible future options include:
 - a dual-license model separating code, documentation, and research examples.
 
 The licensing model should be revisited before any public release.
-
