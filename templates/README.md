@@ -7,6 +7,7 @@ The templates in this repository will be designed specifically for the shareable
 Future templates may include:
 
 - daily research note;
+- daily check-out;
 - observation note;
 - research question note;
 - hypothesis note;
@@ -14,3 +15,7 @@ Future templates may include:
 - reflection note;
 - weekly review note.
 
+## Available templates
+
+- `daily-checkout.md`: the five-question daily check-out template, including the research-state checkpoint.
+- `opera-export-block.md`: the structured block used to move from conversation to Markdown capture.
