@@ -26,7 +26,8 @@ desktop.ini
 *.temp
 *.bak
 *.backup
+__pycache__/
+*.pyc
 
 # Logs
 *.log
-
