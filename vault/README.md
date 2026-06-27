@@ -1,26 +1,37 @@
 # Vault
 
-The personal Obsidian vault remains conceptually separate from this repository.
+This directory is legacy.
 
-This directory documents the relationship between OPERA as a shareable research method and the private working vault used during doctoral research.
+The canonical repository-backed Obsidian vault is now:
 
-The repository should contain only material that is suitable for sharing, revision, or future publication. Personal notes, sensitive data, private reflections, and unpublished research materials should remain outside the repository unless they have been deliberately anonymised and approved for inclusion.
+```text
+MicioVault/
+```
 
-## OPERA-Capture
+The canonical OPERA capture archive is now:
 
-`vault/OPERA-Capture/` is a controlled bridge for structured capture notes produced through the OPERA workflow.
+```text
+MicioVault/00_OPERA_Capture/
+```
 
-It may contain selected check-ins, check-outs, and review notes that the researcher deliberately chooses to version. This is not a full mirror of the private Obsidian vault.
+## Legacy Status
 
-The intended flow is:
+`vault/` and `vault/OPERA-Capture/` are retained only for historical reference, migration checks, and audit trails. They should not receive new OPERA captures during normal work.
+
+Do not delete legacy files unless a future migration pass confirms that the material is safely preserved, intentionally excluded, or no longer needed.
+
+## Future Capture Flow
+
+New structured captures should follow this path:
 
 ```text
 ChatGPT conversation
   -> OPERA_EXPORT block
   -> Codex extraction
-  -> Markdown note in vault/OPERA-Capture
+  -> Markdown note in MicioVault/00_OPERA_Capture/
+  -> dataset index refresh when appropriate
   -> Git commit
-  -> Obsidian synchronisation
+  -> Obsidian reading and linking
 ```
 
 This keeps Obsidian as the primary research environment while allowing OPERA to preserve a versioned sequence of methodological checkpoints.
