@@ -49,8 +49,21 @@ This workflow is documented in `docs/Conversational-Capture.md`.
 - **Versioning**: meaningful changes should be preserved through Git.
 - **Calendar boundary**: Calendar stores dates and reminders, not research knowledge.
 
+## Canonical Paths
+
+- Obsidian vault: `MicioVault/`
+- Capture notes: `MicioVault/00_OPERA_Capture/`
+- Entry index: `20_OPERA_Dataset/opera_entries_index.csv` and `20_OPERA_Dataset/opera_entries.jsonl`
+- Capture script: `scripts/opera_capture.py`
+- Legacy folder (retained, not extended): `vault/OPERA-Capture/`
+
+## Capture ID Convention
+
+Capture identifiers use the date-based format: `OPERA-YYYY-MM-DD-NNN`.
+The sequence number `NNN` is padded to three digits and scoped to the day.
+The legacy format `R-000NNN` is no longer used for new entries.
+
 ## Open Questions
 
 - Which OPERA materials should remain private and which can become part of a future public method?
-- Should the capture identifier be purely chronological (`R-000001`) or date-based (`OPERA-2026-06-19`)?
 - How much automation is desirable before the method becomes too opaque?

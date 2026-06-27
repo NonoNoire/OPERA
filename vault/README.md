@@ -1,26 +1,21 @@
-# Vault
+# Vault — Legacy Folder
 
-The personal Obsidian vault remains conceptually separate from this repository.
+> **This folder is legacy.** New captures must not be written here.
+>
+> The canonical Obsidian vault is `MicioVault/` at the repository root.
+> The canonical capture directory is `MicioVault/00_OPERA_Capture/`.
 
-This directory documents the relationship between OPERA as a shareable research method and the private working vault used during doctoral research.
+This directory was the original capture destination before the migration to the `MicioVault` structure. It is preserved for historical continuity. Its contents are not indexed in the active `20_OPERA_Dataset/` files and should not be extended.
 
-The repository should contain only material that is suitable for sharing, revision, or future publication. Personal notes, sensitive data, private reflections, and unpublished research materials should remain outside the repository unless they have been deliberately anonymised and approved for inclusion.
+## OPERA-Capture (legacy)
 
-## OPERA-Capture
+`vault/OPERA-Capture/` contains early OPERA capture notes from the period before the canonical structure was established. Notes here use the legacy `R-000NNN` identifier format and a year/month subdirectory layout (`2026/06/...`).
 
-`vault/OPERA-Capture/` is a controlled bridge for structured capture notes produced through the OPERA workflow.
+The active capture flow is documented in `docs/Conversational-Capture.md`.
 
-It may contain selected check-ins, check-outs, and review notes that the researcher deliberately chooses to version. This is not a full mirror of the private Obsidian vault.
+The canonical capture destination is `MicioVault/00_OPERA_Capture/` using the `OPERA-YYYY-MM-DD-NNN.md` filename convention.
 
-The intended flow is:
+## Contents
 
-```text
-ChatGPT conversation
-  -> OPERA_EXPORT block
-  -> Codex extraction
-  -> Markdown note in vault/OPERA-Capture
-  -> Git commit
-  -> Obsidian synchronisation
-```
-
-This keeps Obsidian as the primary research environment while allowing OPERA to preserve a versioned sequence of methodological checkpoints.
+- `2026/06/2026-06-19-r-000001.md`: first OPERA capture note (legacy format). Migrated content is available at `MicioVault/00_OPERA_Capture/OPERA-2026-06-19-001.md`.
+- `2026/06/2026-06-24-r-000005.md`: archived daily check-out (legacy format). Not yet indexed.

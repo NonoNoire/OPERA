@@ -43,7 +43,7 @@ See: `docs/2026-06-18-genesis-checkpoint.md` and `docs/next-actions-graded-inter
 
 OPERA v0.3 introduces Conversational Capture: a workflow where a natural ChatGPT exchange can be converted into a structured `OPERA_EXPORT` block, processed by Codex, versioned on GitHub, and synchronised with Obsidian.
 
-The first daily check-out capture is stored as `vault/OPERA-Capture/2026/06/2026-06-19-r-000001.md`.
+The first daily check-out capture was stored as `vault/OPERA-Capture/2026/06/2026-06-19-r-000001.md` and has since been migrated to the canonical location: `MicioVault/00_OPERA_Capture/OPERA-2026-06-19-001.md`.
 
 ## Synthetic Roadmap
 
@@ -57,12 +57,15 @@ The first daily check-out capture is stored as `vault/OPERA-Capture/2026/06/2026
 
 ## Repository Structure
 
+- `MicioVault/`: the canonical Obsidian vault. Open this folder in Obsidian on any computer after cloning.
+  - `00_OPERA_Capture/`: canonical location for all new OPERA capture notes.
+- `20_OPERA_Dataset/`: structured index of all capture entries as CSV and JSONL.
 - `docs/`: methodological and architectural documentation.
-- `templates/`: future OPERA templates, separated from any personal vault.
+- `templates/`: OPERA templates, separated from any personal vault.
 - `examples/`: future anonymised examples of use.
 - `assets/`: shareable diagrams, images, and visual documentation.
 - `scripts/`: lightweight utilities for capture, export, and maintenance.
-- `vault/`: notes about the relationship between the public method and the private Obsidian vault, plus selected OPERA capture notes when deliberately versioned.
+- `vault/`: legacy folder retained for historical continuity. New captures do not go here.
 - `.github/`: future repository governance and workflow files.
 
 ## Licensing Note
