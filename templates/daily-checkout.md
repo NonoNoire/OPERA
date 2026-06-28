@@ -22,3 +22,7 @@ Qualsiasi attività con una data precisa o una scadenza.
 ## 5. Stato della ricerca
 
 In che fase si trova il progetto? Una sola frase: non descrivere cosa hai fatto oggi, ma quale passaggio della ricerca rappresenta.
+
+## 6. Nota critica
+
+Quale rischio, ambiguità o limite va ricordato prima di chiudere la giornata?

@@ -28,6 +28,8 @@ from pathlib import Path
 
 BEGIN = "[OPERA_EXPORT_BEGIN]"
 END = "[OPERA_EXPORT_END]"
+DEFAULT_OUTPUT_ROOT = "MicioVault/00_OPERA_Capture"
+CANONICAL_ID_PATTERN = re.compile(r"OPERA-(\d{4}-\d{2}-\d{2})-\d{3}")
 
 
 @dataclass
@@ -40,6 +42,7 @@ class OperaCapture:
     waiting: list[str] = field(default_factory=list)
     calendar: list[str] = field(default_factory=list)
     research_state: list[str] = field(default_factory=list)
+    critical_note: list[str] = field(default_factory=list)
 
 
 def extract_block(text: str) -> str:
@@ -65,6 +68,7 @@ def parse_block(block: str) -> OperaCapture:
         "Waiting": "waiting",
         "Calendar": "calendar",
         "Research state": "research_state",
+        "Critical note": "critical_note",
     }
 
     values: dict[str, str | list[str]] = {
@@ -76,6 +80,7 @@ def parse_block(block: str) -> OperaCapture:
         "waiting": [],
         "calendar": [],
         "research_state": [],
+        "critical_note": [],
     }
 
     current_list: str | None = None
@@ -92,7 +97,7 @@ def parse_block(block: str) -> OperaCapture:
             current_list = None
             continue
 
-        list_match = re.match(r"^(Done|Next|Waiting|Calendar|Research state):\s*$", line)
+        list_match = re.match(r"^(Done|Next|Waiting|Calendar|Research state|Critical note):\s*$", line)
         if list_match:
             current_list = list_fields[list_match.group(1)]
             continue
@@ -115,6 +120,7 @@ def parse_block(block: str) -> OperaCapture:
         waiting=list(values["waiting"]),
         calendar=list(values["calendar"]),
         research_state=list(values["research_state"]),
+        critical_note=list(values["critical_note"]),
     )
 
     if not capture.identifier:
@@ -125,6 +131,12 @@ def parse_block(block: str) -> OperaCapture:
         raise ValueError("Missing Type.")
 
     datetime.strptime(capture.date, "%Y-%m-%d")
+    id_match = CANONICAL_ID_PATTERN.fullmatch(capture.identifier)
+    if not id_match:
+        raise ValueError("ID must use canonical format OPERA-YYYY-MM-DD-NNN.")
+    if id_match.group(1) != capture.date:
+        raise ValueError("ID date must match Date.")
+
     return capture
 
 
@@ -135,12 +147,13 @@ def markdown_list(items: list[str]) -> str:
 
 
 def render_markdown(capture: OperaCapture) -> str:
-    title = f"{capture.identifier} — {capture.capture_type}"
+    title = f"{capture.identifier} - {capture.capture_type}"
     return f"""---
 id: {capture.identifier}
 date: {capture.date}
 type: {capture.capture_type}
 opera_version: v0.3
+archive_path: {DEFAULT_OUTPUT_ROOT}
 ---
 
 # {title}
@@ -164,6 +177,10 @@ opera_version: v0.3
 ## Research state
 
 {markdown_list(capture.research_state)}
+
+## Critical note
+
+{markdown_list(capture.critical_note)}
 """
 
 
@@ -174,7 +191,7 @@ def output_path(output_root: Path, capture: OperaCapture) -> Path:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Extract OPERA export blocks.")
     parser.add_argument("input", nargs="?", help="Text file containing an OPERA export block. Reads stdin if omitted.")
-    parser.add_argument("--output-root", default="MicioVault/00_OPERA_Capture", help="Root directory for generated notes.")
+    parser.add_argument("--output-root", default=DEFAULT_OUTPUT_ROOT, help="Root directory for generated notes.")
     parser.add_argument("--dry-run", action="store_true", help="Print generated Markdown instead of writing a file.")
     args = parser.parse_args()
 

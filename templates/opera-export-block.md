@@ -24,6 +24,9 @@ Calendar:
 Research state:
 - ...
 
+Critical note:
+- ...
+
 [OPERA_EXPORT_END]
 ```
 
