@@ -1,3 +1,6 @@
+# Claude Code local session state
+.claude/
+
 # Obsidian temporary files and caches
 .obsidian/cache/
 .obsidian/workspace

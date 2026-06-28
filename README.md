@@ -68,10 +68,10 @@ The migrated first daily check-out capture is stored in the canonical archive as
 
 ## Repository Structure
 
+- `MicioVault/`: the canonical Obsidian vault. Open this folder in Obsidian on any computer after cloning.
+  - `00_OPERA_Capture/`: canonical location for all new OPERA capture notes.
+- `20_OPERA_Dataset/`: structured index of all capture entries as CSV and JSONL.
 - `docs/`: methodological and architectural documentation.
-- `MicioVault/`: canonical Obsidian vault for the repository-backed OPERA system.
-- `MicioVault/00_OPERA_Capture/`: canonical OPERA capture archive using the `OPERA-YYYY-MM-DD-NNN` identifier policy.
-- `20_OPERA_Dataset/`: derived CSV and JSONL indexes for canonical capture entries.
 - `templates/`: future OPERA templates, separated from any personal vault.
 - `examples/`: future anonymised examples of use.
 - `assets/`: shareable diagrams, images, and visual documentation.

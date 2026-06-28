@@ -20,6 +20,12 @@ The core problem is therefore not "where should notes be stored?" but "how can a
 
 OPERA overlaps with existing tools, but it is not equivalent to them.
 
+### Why OPERA Is Not Just an Obsidian Template
+
+An Obsidian template can standardise the shape of a note. OPERA standardises a broader research method: where capture entries live, how they are identified, how legacy material is migrated, how derived indexes are maintained, how GitHub preserves version history, and how private vault material is kept separate from shareable methodological infrastructure.
+
+This distinction matters because the purpose of OPERA is not only to make notes look consistent. It is to make research process traces portable, auditable, analysable, and methodologically meaningful over time.
+
 ### OPERA and Obsidian
 
 Obsidian is the primary knowledge environment for reading, linking, and developing notes. OPERA defines the methodological structure around what enters the vault, how capture entries are identified, how they are versioned, and how selected material becomes dataset-ready.
@@ -73,6 +79,7 @@ OPERA/
   MicioVault/
     00_OPERA_Capture/
       OPERA-2026-06-19-001.md
+      OPERA-2026-06-24-001.md
       OPERA-2026-06-27-001.md
   20_OPERA_Dataset/
     opera_entries_index.csv
@@ -228,31 +235,33 @@ The old `vault/` directory and the canonical `MicioVault/` directory can create 
 
 ## Roadmap
 
-### v0.4 Knowledge Graph
+### v0.4 Architecture Consolidation
+
+- Stabilise the canonical repository structure around `MicioVault/`, `MicioVault/00_OPERA_Capture/`, `20_OPERA_Dataset/`, `docs/`, `scripts/`, and `templates/`.
+- Complete conservative migration of clearly real legacy captures while leaving historical files in place.
+- Make the `OPERA-YYYY-MM-DD-NNN` identifier policy the only format for new canonical entries.
+- Keep the method Markdown-first and avoid premature interface work.
+
+### v0.5 Analytical Layer
 
 - Define stable relations between captures, research questions, concepts, sources, projects, and outputs.
-- Keep graph conventions readable in plain Markdown.
-- Avoid ontology work that does not improve research practice.
+- Treat CSV and JSONL indexes as derived analytical surfaces, not as replacements for the Markdown archive.
+- Add consistency checks only where repeated use shows they reduce real friction.
+- Prepare for qualitative and bibliographic analysis without pretending to replace CAQDAS or Zotero workflows.
 
-### v0.5 Automation
+### v0.6 Interface Prototype
 
-- Automate only repeated, low-risk operations.
-- Candidate automations: capture creation, dataset refresh, consistency checks, and periodic review prompts.
-- Preserve manual review before public sharing or deletion.
+- Prototype a small app or dashboard only if the capture archive and dataset layer have grown enough to justify one.
+- Prioritise filtering, timeline review, schema validation, and privacy boundaries over visual polish.
+- Keep all interface experiments reversible: Markdown capture files remain the source of truth.
+- Test the workflow across at least two computers and the repository-backed Obsidian vault.
 
-### v0.6 Stable Beta
+### v1.0 Stable Method
 
-- Test OPERA across sustained doctoral work.
-- Validate the canonical vault structure across at least two computers.
-- Confirm the migration boundary between `vault/OPERA-Capture/` and `MicioVault/00_OPERA_Capture/`.
-- Document privacy and publication rules.
-
-### v1.0 Public Release
-
-- Publish a stable architecture and workflow guide.
+- Publish a stable architecture and workflow guide for OPERA as a research method.
 - Provide templates, example entries, and scripts that do not expose private research content.
 - Decide licensing for code, documentation, and examples.
-- Clarify the distinction between OPERA as method and any future software component.
+- Clarify the distinction between OPERA as method, OPERA as repository workflow, and any future software component.
 
 ## Current v1 Principle
 

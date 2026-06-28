@@ -5,9 +5,9 @@ Use this block when a conversational check-in or check-out must be captured by C
 ```text
 [OPERA_EXPORT_BEGIN]
 
-ID: R-000001
-Date: 2026-06-19
-Type: Daily Check-out
+ID: OPERA-YYYY-MM-DD-NNN
+Date: YYYY-MM-DD
+Type: check-out
 
 Done:
 - ...
@@ -22,6 +22,9 @@ Calendar:
 - none
 
 Research state:
+- ...
+
+Critical note:
 - ...
 
 [OPERA_EXPORT_END]

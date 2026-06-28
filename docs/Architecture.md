@@ -78,6 +78,7 @@ OPERA/
   MicioVault/
     00_OPERA_Capture/
       OPERA-2026-06-19-001.md
+      OPERA-2026-06-24-001.md
       OPERA-2026-06-27-001.md
   20_OPERA_Dataset/
     opera_entries_index.csv
@@ -101,11 +102,32 @@ OPERA/
 - **Calendar boundary**: Calendar stores dates and reminders, not research knowledge.
 - **Migration safety**: legacy files are marked and redirected before any deletion is considered.
 
+## Canonical Paths
+
+- Obsidian vault: `MicioVault/`
+- Capture notes: `MicioVault/00_OPERA_Capture/`
+- Entry index: `20_OPERA_Dataset/opera_entries_index.csv` and `20_OPERA_Dataset/opera_entries.jsonl`
+- Capture script: `scripts/opera_capture.py`
+- Legacy folder (retained, not extended): `vault/OPERA-Capture/`
+
+## Capture ID Convention
+
+Capture identifiers use the date-based format: `OPERA-YYYY-MM-DD-NNN`.
+The sequence number `NNN` is padded to three digits and scoped to the day.
+The legacy format `R-000NNN` is no longer used for new entries.
+
 ## Legacy Boundary
 
 `vault/OPERA-Capture/` contains earlier capture material and path conventions. It should be treated as historical input for migration, not as the active archive.
 
 Future captures should go to `MicioVault/00_OPERA_Capture/`. If a legacy item is migrated, the new canonical entry should preserve useful provenance such as `legacy_id` and `legacy_path` in front matter.
+
+Legacy files may remain in place even after migration. Do not delete them unless a future audit confirms that removal is safe and intentional.
+
+## Open Questions
+
+- Which OPERA materials should remain private and which can become part of a future public method?
+- How much automation is desirable before the method becomes too opaque?
 
 ## See Also
 
