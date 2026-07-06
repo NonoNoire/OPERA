@@ -34,3 +34,29 @@ __pycache__/
 
 # Logs
 *.log
+
+# OPERA repository boundary
+# The Git repository tracks portable infrastructure and documentation.
+# It must not track private vault data or generated exports.
+
+# OPERA private/local vault material
+MicioVault/
+00_OPERA_Capture/
+10_OPERA_Method/
+30_OPERA_Memos/
+99_OPERA_Backup/
+
+# OPERA generated artifacts
+20_OPERA_Dataset/
+*.jsonl
+*.csv
+*.report.md
+*privacy_audit*.md
+
+# Local Obsidian / agent state
+.obsidian/
+.agents/
+
+# Python generated files
+__pycache__/
+*.py[cod]
