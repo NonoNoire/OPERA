@@ -1,0 +1,31 @@
+[vault]
+root = "C:/Users/chris/Desktop/MicioVault"
+capture_dir = "00_OPERA_Capture"
+dataset_dir = "20_OPERA_Dataset"
+
+[parser]
+schema_version = 2
+canonical_pattern = "OPERA-*.md"
+include_legacy = false
+tolerate_v1 = true
+
+[exports.internal]
+enabled = true
+output_dir = "20_OPERA_Dataset/internal"
+jsonl = "opera_entries.internal.jsonl"
+csv = "opera_entries.internal.csv"
+validation_report = "opera_validation.internal.md"
+
+[exports.research]
+enabled = true
+output_dir = "20_OPERA_Dataset/research"
+jsonl = "opera_entries.research.jsonl"
+csv = "opera_entries.research.csv"
+validation_report = "opera_validation.research.md"
+exclude_sections = [
+  "Operational log",
+  "Next actions",
+  "Waiting",
+  "Calendar actions",
+  "Personal/contextual logistics"
+]

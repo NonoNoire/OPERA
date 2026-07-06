@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opera.local/schemas/entry.v2.schema.json",
+  "title": "OPERA Entry v2",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "date",
+    "type",
+    "status",
+    "source",
+    "projects",
+    "research_relevance",
+    "export_profile",
+    "privacy",
+    "calendar_action",
+    "legacy",
+    "sections"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 2
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^OPERA-[0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9]{3}$"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["check-out", "memo", "review", "observation", "event"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "captured", "validated", "migrated", "archived"]
+    },
+    "source": {
+      "type": "object",
+      "required": ["kind"],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": ["chatgpt-conversation", "manual", "import", "legacy-migration"]
+        },
+        "agent": {
+          "type": "string"
+        },
+        "captured_by": {
+          "type": "string"
+        },
+        "vault_path": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "research_relevance": {
+      "type": "string",
+      "enum": ["none", "low", "medium", "high"]
+    },
+    "export_profile": {
+      "type": "object",
+      "required": ["internal", "research"],
+      "properties": {
+        "internal": {
+          "type": "boolean"
+        },
+        "research": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "privacy": {
+      "type": "object",
+      "required": [
+        "contains_personal_data",
+        "contains_health_data",
+        "contains_calendar_data",
+        "contains_third_party_names",
+        "research_export_default"
+      ],
+      "properties": {
+        "contains_personal_data": {
+          "type": "boolean"
+        },
+        "contains_health_data": {
+          "type": "boolean"
+        },
+        "contains_calendar_data": {
+          "type": "boolean"
+        },
+        "contains_third_party_names": {
+          "type": "boolean"
+        },
+        "research_export_default": {
+          "type": "string",
+          "enum": ["include", "filtered", "exclude"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "calendar_action": {
+      "type": "object",
+      "required": ["has_calendar_actions", "status"],
+      "properties": {
+        "has_calendar_actions": {
+          "type": "boolean"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["none", "pending", "completed", "skipped"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "legacy": {
+      "type": "object",
+      "properties": {
+        "legacy_id": {
+          "type": ["string", "null"]
+        },
+        "legacy_path": {
+          "type": ["string", "null"]
+        },
+        "migrated_from": {
+          "type": ["string", "null"]
+        },
+        "migration_date": {
+          "type": ["string", "null"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "sections": {
+      "type": "object",
+      "required": [
+        "Research-relevant content",
+        "Methodological notes",
+        "Operational log",
+        "Next actions",
+        "Waiting",
+        "Calendar actions",
+        "Personal/contextual logistics",
+        "Critical notes"
+      ],
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
