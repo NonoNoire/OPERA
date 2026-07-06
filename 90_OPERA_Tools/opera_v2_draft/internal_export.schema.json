@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opera.local/schemas/internal_export.schema.json",
+  "title": "OPERA Internal Export Record",
+  "type": "object",
+  "required": [
+    "id",
+    "date",
+    "schema_version",
+    "profile",
+    "type",
+    "status",
+    "path",
+    "metadata",
+    "sections"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "integer"
+    },
+    "profile": {
+      "const": "internal"
+    },
+    "type": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "sections": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

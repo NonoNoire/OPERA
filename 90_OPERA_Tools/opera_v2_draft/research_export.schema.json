@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opera.local/schemas/research_export.schema.json",
+  "title": "OPERA Research Export Record",
+  "type": "object",
+  "required": [
+    "id",
+    "date",
+    "schema_version",
+    "profile",
+    "type",
+    "status",
+    "projects",
+    "research_relevance",
+    "research_export_status",
+    "recommended_action",
+    "source_privacy_flags",
+    "export_privacy_flags",
+    "source_context_markers",
+    "export_context_markers",
+    "safe_methodological_terms_detected",
+    "audit_scope",
+    "audit_notes",
+    "anonymization_suggestions",
+    "summary",
+    "sections"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "integer"
+    },
+    "profile": {
+      "const": "research"
+    },
+    "type": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "research_relevance": {
+      "type": "string"
+    },
+    "research_export_status": {
+      "type": "string",
+      "enum": ["safe", "needs_review", "anonymize_before_use", "internal_only"]
+    },
+    "recommended_action": {
+      "type": "string",
+      "enum": ["keep", "manual_review", "anonymize", "internal_only", "exclude_from_research_export"]
+    },
+    "source_privacy_flags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "institution",
+          "third_party_name",
+          "third_party_sensitive",
+          "calendar_detail",
+          "health",
+          "bodily_condition",
+          "personal_logistics",
+          "client_sensitive"
+        ]
+      }
+    },
+    "export_privacy_flags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "institution",
+          "third_party_name",
+          "third_party_sensitive",
+          "calendar_detail",
+          "health",
+          "bodily_condition",
+          "personal_logistics",
+          "client_sensitive"
+        ]
+      }
+    },
+    "source_context_markers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "project_label",
+          "institution",
+          "role_reference",
+          "calendar_detail",
+          "personal_logistics"
+        ]
+      }
+    },
+    "export_context_markers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "project_label",
+          "institution",
+          "role_reference",
+          "calendar_detail",
+          "personal_logistics"
+        ]
+      }
+    },
+    "safe_methodological_terms_detected": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "audit_scope": {
+      "type": "string",
+      "enum": ["export_content_audit"]
+    },
+    "audit_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "anonymization_suggestions": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "summary": {
+      "type": "string"
+    },
+    "sections": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
